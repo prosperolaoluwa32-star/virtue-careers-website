@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Work | Virtue Careers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Virtue Careers" class="logo-img">
+        <span class="logo-text">Virtue Careers</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html" class="active-link">Work</a></li>
+          <li><a href="pricing.html">Packages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <h1>See the Method in Action</h1>
+    <p>A real example of how we transform experience into positioning.</p>
+  </div>
+
+  <!-- WORK SAMPLES (BEFORE/AFTER) -->
+  <section id="work">
+    <h2 class="reveal">See the Method in Action</h2>
+    <p class="work-intro reveal">A real example of the Virtue Careers method — my own resume, transformed.</p>
+    <div class="work-grid">
+      <div class="work-card reveal">
+        <h3>Before</h3>
+        <img src="images/resume-before.jpg" alt="Resume before Virtue Careers transformation" class="resume-img">
+      </div>
+      <div class="work-card reveal">
+        <h3>After</h3>
+        <img src="images/resume-after.jpg" alt="Resume after Virtue Careers transformation" class="resume-img">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Virtue Careers. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

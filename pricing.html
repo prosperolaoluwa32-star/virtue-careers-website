@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages | Virtue Careers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Virtue Careers" class="logo-img">
+        <span class="logo-text">Virtue Careers</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="pricing.html" class="active-link">Packages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <h1>Packages</h1>
+    <p>Clear options for every stage of your executive career journey.</p>
+  </div>
+
+  <!-- PRICING / PACKAGES -->
+  <section id="pricing">
+    <h2 class="reveal">Packages</h2>
+    <div class="pricing-grid">
+
+      <div class="pricing-card reveal">
+        <h3>Resume Refresh</h3>
+        <p class="pricing-tagline">For candidates who need one thing done right.</p>
+        <p>Executive/board-level resume revamp — transforming your career history into a clear, achievement-driven document built for recruiters and hiring executives.</p>
+        <p class="price-tag">Starting from $297</p>
+        <a href="contact.html" class="btn-secondary">Book a Discovery Call</a>
+      </div>
+
+      <div class="pricing-card reveal">
+        <h3>LinkedIn Visibility</h3>
+        <p class="pricing-tagline">For professionals who want to be found.</p>
+        <p>LinkedIn profile optimization designed to help recruiters, boards, and decision-makers recognize your leadership value within seconds.</p>
+        <p class="price-tag">Starting from $197</p>
+        <a href="contact.html" class="btn-secondary">Book a Discovery Call</a>
+      </div>
+
+      <div class="pricing-card reveal">
+        <h3>Essential</h3>
+        <p class="pricing-tagline">For professionals ready to strengthen their core positioning.</p>
+        <p>Executive resume development and LinkedIn profile optimization, designed to align your experience with the standards recruiters and hiring executives expect.</p>
+        <p class="price-tag">Custom Pricing</p>
+        <a href="contact.html" class="btn-secondary">Book a Discovery Call</a>
+      </div>
+
+      <div class="pricing-card reveal">
+        <h3>Executive</h3>
+        <p class="pricing-tagline">For leaders preparing for their next move.</p>
+        <p>Everything in Essential, plus executive interview preparation and a personalized career positioning strategy — ensuring you're ready to communicate your value as clearly in the room as you are on paper.</p>
+        <p class="price-tag">Custom Pricing</p>
+        <a href="contact.html" class="btn-secondary">Book a Discovery Call</a>
+      </div>
+
+      <div class="pricing-card featured reveal">
+        <span class="featured-badge">Most Popular</span>
+        <h3>Signature</h3>
+        <p class="pricing-tagline">For executives who want end-to-end support.</p>
+        <p>Everything in Executive, plus reverse recruiting and strategic job search support, backed by a tailored 30-60-90 day success plan for your first months in the new role.</p>
+        <p class="price-tag">Custom Pricing</p>
+        <a href="contact.html" class="btn-secondary">Book a Discovery Call</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Virtue Careers. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

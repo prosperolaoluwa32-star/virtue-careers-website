@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Virtue Careers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+<header id="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Virtue Careers" class="logo-img">
+        <span class="logo-text">Virtue Careers</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active-link">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="pricing.html">Packages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="page-banner">
+    <h1>Our Services</h1>
+    <p>Strategic positioning built around your experience, your goals, and your target market.</p>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding-top: 160px;">
+    <h2 class="reveal">Services</h2>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <h3>Executive Resume & Career Positioning</h3>
+        <p>Transforming complex career histories into achievement-driven, ATS-optimized documents built for recruiters and hiring executives.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>LinkedIn Visibility & Executive Branding</h3>
+        <p>Optimizing your LinkedIn presence so recruiters, boards, and decision-makers recognize your leadership value within seconds.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>Executive Interview Preparation & Leadership Storytelling</h3>
+        <p>Preparing you to communicate your impact with clarity and confidence in the room — not just on paper.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3>Reverse Recruiting & Strategic Job Search Support</h3>
+        <p>End-to-end support identifying, targeting, and pursuing the right leadership opportunities — not just applying and waiting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <h2 class="reveal">How It Works</h2>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-number">01</div>
+        <h3>Discovery Call</h3>
+        <p>Understand your goals, career history, and target roles.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">02</div>
+        <h3>Career Audit</h3>
+        <p>Review your current resume, LinkedIn, and professional narrative.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">03</div>
+        <h3>Positioning Strategy</h3>
+        <p>Identify key achievements, metrics, and your strongest angle.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">04</div>
+        <h3>Document Development</h3>
+        <p>Draft, refine, and align every document to your target market.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-number">05</div>
+        <h3>Delivery & Support</h3>
+        <p>Final delivery, revisions, and guidance on next steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Virtue Careers. All rights reserved.</p>
+  </footer>
+
+<script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

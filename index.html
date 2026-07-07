@@ -11,16 +11,26 @@
   <!-- HEADER / NAVIGATION -->
   <header id="header">
     <div class="nav-container">
-      <div class="logo">Virtue Careers</div>
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Virtue Careers" class="logo-img">
+        <span class="logo-text">Virtue Careers</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#pricing">Packages</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active-link">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="pricing.html">Packages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -28,94 +38,92 @@
 
   <!-- HERO SECTION -->
   <section id="hero">
+    <div class="hero-glow"></div>
+
+    <svg class="hero-ribbons" viewBox="0 0 1600 900" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="ribbonGold1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#C9A227" stop-opacity="0" />
+          <stop offset="50%" stop-color="#E8C863" stop-opacity="0.9" />
+          <stop offset="100%" stop-color="#C9A227" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="ribbonGold2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#9C7A1C" stop-opacity="0" />
+          <stop offset="50%" stop-color="#D4B04A" stop-opacity="0.7" />
+          <stop offset="100%" stop-color="#9C7A1C" stop-opacity="0" />
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="10" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <g class="ribbon-group ribbon-group-1">
+        <path class="ribbon ribbon-primary" d="M -200,650 C 200,450 450,850 850,550 C 1150,330 1350,100 1900,-50" stroke="url(#ribbonGold1)" />
+      </g>
+      <g class="ribbon-group ribbon-group-2">
+        <path class="ribbon ribbon-thin" d="M -200,820 C 300,660 550,980 950,720 C 1250,520 1450,320 1900,220" stroke="url(#ribbonGold2)" />
+      </g>
+      <g class="ribbon-group ribbon-group-3">
+        <path class="ribbon ribbon-thin" d="M -200,60 C 150,-80 400,220 800,20 C 1100,-140 1300,-280 1900,-350" stroke="url(#ribbonGold2)" />
+      </g>
+    </svg>
+
+    <div class="particles">
+      <span class="particle p1"></span>
+      <span class="particle p2"></span>
+      <span class="particle p3"></span>
+      <span class="particle p4"></span>
+      <span class="particle p5"></span>
+      <span class="particle p6"></span>
+      <span class="particle p7"></span>
+      <span class="particle p8"></span>
+    </div>
+
     <p class="hero-eyebrow reveal">Executive Career Positioning</p>
     <h1 class="reveal">Virtue Careers</h1>
     <p class="hero-tagline reveal">Helping executives, directors, and board leaders stand out — on paper and in the room.</p>
-    <a href="#contact" class="btn-primary reveal">Book a Discovery Call</a>
+    <a href="contact.html" class="btn-primary reveal">Book a Discovery Call</a>
+
+    <div class="scroll-cue">
+      <span></span>
+    </div>
   </section>
 
-  <!-- ABOUT / BIO -->
-  <section id="about">
-    <h2 class="reveal">About Virtue Careers</h2>
-    <div class="about-content reveal">
-      <img src="images/headshot.jpg" alt="Founder of Virtue Careers" class="about-photo">
-      <p>
-        Virtue Careers exists because too many exceptional professionals are overlooked — not for lack of experience, but because that experience is never translated into a language decision-makers immediately recognize. Directors, VPs, and executives are passed over for promotions and leadership roles not because they lack results, but because those results — the achievements, the metrics, the measurable impact — are buried instead of highlighted.
-        <br><br>
-        Founded by an executive career positioning strategist with years of experience helping senior professionals present themselves as the obvious choice for leadership opportunities, Virtue Careers is built on one principle: experience creates capability, but positioning creates opportunity.
-        <br><br>
-        We don't write generic resumes or apply one-size-fits-all templates. Every resume, LinkedIn profile, and career document we create is built to show boards, hiring managers, and decision-makers exactly why you belong in the room — and why you're the right choice once you're in it.
+  <!-- MEET THE STANDARD -->
+  <section id="standard">
+    <div class="standard-overlay">
+      <p class="standard-eyebrow reveal">Who We Serve</p>
+      <h2 class="reveal">Meet the Standard</h2>
+      <p class="standard-text reveal">
+        Directors. Vice Presidents. C-suite leaders. Board members. Every professional we work with has already proven their capability in the room — our work ensures that proof is just as clear on paper, in search results, and in every conversation before they even arrive.
       </p>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <h2 class="reveal">Services</h2>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <h3>Executive Resume & Career Positioning</h3>
-        <p>Transforming complex career histories into achievement-driven, ATS-optimized documents built for recruiters and hiring executives.</p>
-      </div>
-      <div class="service-card reveal">
-        <h3>LinkedIn Visibility & Executive Branding</h3>
-        <p>Optimizing your LinkedIn presence so recruiters, boards, and decision-makers recognize your leadership value within seconds.</p>
-      </div>
-      <div class="service-card reveal">
-        <h3>Executive Interview Preparation & Leadership Storytelling</h3>
-        <p>Preparing you to communicate your impact with clarity and confidence in the room — not just on paper.</p>
-      </div>
-      <div class="service-card reveal">
-        <h3>Reverse Recruiting & Strategic Job Search Support</h3>
-        <p>End-to-end support identifying, targeting, and pursuing the right leadership opportunities — not just applying and waiting.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK SAMPLES (BEFORE/AFTER) -->
-  <section id="work">
-    <h2 class="reveal">See the Method in Action</h2>
-    <p class="work-intro reveal">A real example of the Virtue Careers method — my own resume, transformed.</p>
-    <div class="work-grid">
-      <div class="work-card reveal">
-        <h3>Before</h3>
-        <img src="images/resume-before.jpg" alt="Resume before Virtue Careers transformation" class="resume-img">
-      </div>
-      <div class="work-card reveal">
-        <h3>After</h3>
-        <img src="images/resume-after.jpg" alt="Resume after Virtue Careers transformation" class="resume-img">
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section id="process">
-    <h2 class="reveal">How It Works</h2>
-    <div class="process-grid">
-      <div class="process-step reveal">
-        <div class="step-number">01</div>
-        <h3>Discovery Call</h3>
-        <p>Understand your goals, career history, and target roles.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="step-number">02</div>
-        <h3>Career Audit</h3>
-        <p>Review your current resume, LinkedIn, and professional narrative.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="step-number">03</div>
-        <h3>Positioning Strategy</h3>
-        <p>Identify key achievements, metrics, and your strongest angle.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="step-number">04</div>
-        <h3>Document Development</h3>
-        <p>Draft, refine, and align every document to your target market.</p>
-      </div>
-      <div class="process-step reveal">
-        <div class="step-number">05</div>
-        <h3>Delivery & Support</h3>
-        <p>Final delivery, revisions, and guidance on next steps.</p>
+  <!-- STATS / IMPACT -->
+  <section id="stats">
+    <div class="stats-overlay">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <span class="stat-number">6+</span>
+          <span class="stat-label">Years of Experience</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Continents Served</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-number">92%</span>
+          <span class="stat-label">Client Satisfaction Rate</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-number">30-60-90</span>
+          <span class="stat-label">Day Success Planning</span>
+        </div>
       </div>
     </div>
   </section>
@@ -139,138 +147,45 @@
     </div>
   </section>
 
-  <!-- INSPIRATIONAL / PHILOSOPHY -->
-  <section id="philosophy">
-    <p class="philosophy-quote reveal">Experience creates capability. Positioning creates opportunity.</p>
-    <p class="philosophy-subtext reveal">At Virtue Careers, we exist to close that gap.</p>
-  </section>
-
-<!-- GLOBAL REACH -->
-<section id="global-reach">
-  <h2 class="reveal">Global Reach</h2>
-  <p class="reach-intro reveal">Serving executives and professionals across every major market.</p>
-
-  <div class="map-wrapper reveal">
-    <img src="images/world-map.avif" alt="World map showing Virtue Careers' global reach" class="world-map-img">
-  </div>
-
-  <div class="reach-list reveal">
-    <span class="reach-tag">North America</span>
-    <span class="reach-tag">South America</span>
-    <span class="reach-tag">Europe</span>
-    <span class="reach-tag">Africa</span>
-    <span class="reach-tag">Asia</span>
-  </div>
-</section>
-
-  <!-- PRICING / PACKAGES -->
-  <section id="pricing">
-    <h2 class="reveal">Packages</h2>
-    <div class="pricing-grid">
-
-      <div class="pricing-card reveal">
-        <h3>Resume Refresh</h3>
-        <p class="pricing-tagline">For candidates who need one thing done right.</p>
-        <p>Executive/board-level resume revamp — transforming your career history into a clear, achievement-driven document built for recruiters and hiring executives.</p>
-        <p class="price-tag">Starting from $297</p>
-        <a href="#contact" class="btn-secondary">Book a Discovery Call</a>
+  <!-- WHY VIRTUE CAREERS -->
+  <section id="why-us">
+    <h2 class="reveal">Why Virtue Careers</h2>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <h3>Generic Services</h3>
+        <p>Template-based resumes. Keyword stuffing. Same document structure for every client, regardless of seniority or industry.</p>
       </div>
-
-      <div class="pricing-card reveal">
-        <h3>LinkedIn Visibility</h3>
-        <p class="pricing-tagline">For professionals who want to be found.</p>
-        <p>LinkedIn profile optimization designed to help recruiters, boards, and decision-makers recognize your leadership value within seconds.</p>
-        <p class="price-tag">Starting from $197</p>
-        <a href="#contact" class="btn-secondary">Book a Discovery Call</a>
+      <div class="why-card why-card-featured reveal">
+        <h3>Virtue Careers</h3>
+        <p>Strategic positioning built around your specific achievements, target role, and market — designed to make you the obvious choice.</p>
       </div>
-
-      <div class="pricing-card reveal">
-        <h3>Essential</h3>
-        <p class="pricing-tagline">For professionals ready to strengthen their core positioning.</p>
-        <p>Executive resume development and LinkedIn profile optimization, designed to align your experience with the standards recruiters and hiring executives expect.</p>
-        <p class="price-tag">Custom Pricing</p>
-        <a href="#contact" class="btn-secondary">Book a Discovery Call</a>
+      <div class="why-card reveal">
+        <h3>DIY Approach</h3>
+        <p>Hours spent guessing what recruiters and boards actually look for, without the market insight to know what works.</p>
       </div>
-
-      <div class="pricing-card reveal">
-        <h3>Executive</h3>
-        <p class="pricing-tagline">For leaders preparing for their next move.</p>
-        <p>Everything in Essential, plus executive interview preparation and a personalized career positioning strategy — ensuring you're ready to communicate your value as clearly in the room as you are on paper.</p>
-        <p class="price-tag">Custom Pricing</p>
-        <a href="#contact" class="btn-secondary">Book a Discovery Call</a>
-      </div>
-
-      <div class="pricing-card featured reveal">
-        <span class="featured-badge">Most Popular</span>
-        <h3>Signature</h3>
-        <p class="pricing-tagline">For executives who want end-to-end support.</p>
-        <p>Everything in Executive, plus reverse recruiting and strategic job search support, backed by a tailored 30-60-90 day success plan for your first months in the new role.</p>
-        <p class="price-tag">Custom Pricing</p>
-        <a href="#contact" class="btn-secondary">Book a Discovery Call</a>
-      </div>
-
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <h2 class="reveal">Frequently Asked Questions</h2>
-
-    <div class="faq-item reveal">
-      <h3>How is this different from using a template or ChatGPT?</h3>
-      <p>Templates and AI tools can format words on a page, but they don't understand how recruiters, boards, and hiring executives actually evaluate candidates. Every document we create is strategically positioned — built around your specific achievements, target role, and industry expectations, not a generic structure.</p>
+  <!-- VISION / PHILOSOPHY -->
+  <section id="vision">
+    <div class="vision-overlay">
+      <p class="philosophy-quote reveal">Experience creates capability. Positioning creates opportunity.</p>
+      <p class="philosophy-subtext reveal">At Virtue Careers, we exist to close that gap.</p>
     </div>
-
-    <div class="faq-item reveal">
-      <h3>Will my documents be ATS-compliant?</h3>
-      <p>Yes. Every resume and career document is built to pass Applicant Tracking Systems (ATS) and benchmarked against recruitment parsing standards used across major platforms — while still reading naturally and compellingly to a human hiring manager once it reaches them.</p>
-    </div>
-
-    <div class="faq-item reveal">
-      <h3>I'm not actively job searching right now — is this still for me?</h3>
-      <p>Yes. Many clients come to us before they need to move — to be ready when the right opportunity, promotion, or leadership transition appears. Strong positioning is most powerful when it's already in place, not built in a rush after an opportunity has already passed.</p>
-    </div>
-
-    <div class="faq-item reveal">
-      <h3>Do you work with career changers, industry switchers, or people seeking promotions — not just job seekers?</h3>
-      <p>Yes. Whether you're pursuing a promotion within your current company, transitioning into a new industry, or repositioning your experience for a different function, we tailor your narrative to align with where you're going — not just where you've been.</p>
-    </div>
-
-    <div class="faq-item reveal">
-      <h3>Do you only work with clients in the U.S.?</h3>
-      <p>No. While much of our work focuses on the U.S. market, we work with professionals and executives across North America, South America, Europe, Asia, and Africa — helping global talent position themselves for opportunities anywhere in the world.</p>
-    </div>
-
-    <div class="faq-item reveal">
-      <h3>How much does it cost?</h3>
-      <p>Pricing depends on the scope of support you need. Standalone services like a resume refresh or LinkedIn optimization start at an accessible entry price, while comprehensive executive packages are custom-quoted based on your goals. See our <a href="#pricing">Packages</a> section above, or book a discovery call for exact pricing.</p>
-    </div>
-
-    <div class="faq-item reveal">
-      <h3>How long does the process take?</h3>
-      <p>Most projects are completed within 5–10 business days, depending on scope and package. Rush timelines can be accommodated when needed — this can be discussed during your discovery call.</p>
-    </div>
-
   </section>
 
-  <!-- CONTACT / FINAL CTA -->
-  <section id="contact">
-    <h2 class="reveal">Ready to Elevate Your Career?</h2>
-    <p class="reveal">Your experience deserves to be seen. Let's make sure it is.</p>
-    <a href="mailto:hello@virtuecareers.com" class="btn-primary reveal">Get in Touch</a>
-
-    <div class="contact-details reveal">
-      <p><strong>Email:</strong> <a href="mailto:hello@virtuecareers.com">hello@virtuecareers.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+13292232424">+1 329 223 2424</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prosper-olaoluwa-4b25553a7/" target="_blank">Connect on LinkedIn</a></p>
-    </div>
+  <!-- SECONDARY CTA -->
+  <section id="cta-band">
+    <h2 class="reveal">Your Next Role Is Closer Than You Think</h2>
+    <p class="reveal">Let's build the positioning that gets you there.</p>
+    <a href="contact.html" class="btn-primary reveal">Start the Conversation</a>
   </section>
 
   <footer>
     <p>&copy; 2026 Virtue Careers. All rights reserved.</p>
   </footer>
 
-  <!-- SCROLL REVEAL ANIMATION SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -281,8 +196,14 @@
         }
       });
     }, { threshold: 0.15 });
-
     revealElements.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
   </script>
 
 </body>

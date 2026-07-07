@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Virtue Careers</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet map library (free, no API key needed) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Virtue Careers" class="logo-img">
+        <span class="logo-text">Virtue Careers</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active-link">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="pricing.html">Packages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <h1>About Virtue Careers</h1>
+    <p>The story, philosophy, and reach behind the brand.</p>
+  </div>
+
+  <!-- ABOUT / BIO -->
+  <section id="about">
+    <h2 class="reveal">About Virtue Careers</h2>
+    <div class="about-content reveal">
+      <div class="about-photo-wrap">
+        <img src="images/headshot.png" alt="Founder of Virtue Careers" class="about-photo">
+        <p class="photo-caption">
+          <strong>Prosper Olaoluwa</strong><br>
+          Founder & Executive Career Positioning Strategist
+        </p>
+      </div>
+      <p>
+        Virtue Careers exists because too many exceptional professionals are overlooked — not for lack of experience, but because that experience is never translated into a language decision-makers immediately recognize. Directors, VPs, and executives are passed over for promotions and leadership roles not because they lack results, but because those results — the achievements, the metrics, the measurable impact — are buried instead of highlighted.
+        <br><br>
+        Founded by an executive career positioning strategist with years of experience helping senior professionals present themselves as the obvious choice for leadership opportunities, Virtue Careers is built on one principle: experience creates capability, but positioning creates opportunity.
+        <br><br>
+        We don't write generic resumes or apply one-size-fits-all templates. Every resume, LinkedIn profile, and career document we create is built to show boards, hiring managers, and decision-makers exactly why you belong in the room — and why you're the right choice once you're in it.
+      </p>
+    </div>
+  </section>
+
+  <!-- GLOBAL REACH (LIVE INTERACTIVE MAP) -->
+  <section id="global-reach">
+    <h2 class="reveal">Global Reach</h2>
+    <p class="reach-intro reveal">Serving executives and professionals across every major market. Explore the map — click a marker to learn more.</p>
+
+    <div id="reach-map" class="reveal"></div>
+
+    <div class="reach-list reveal">
+      <span class="reach-tag">North America</span>
+      <span class="reach-tag">South America</span>
+      <span class="reach-tag">Europe</span>
+      <span class="reach-tag">Africa</span>
+      <span class="reach-tag">Asia</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Virtue Careers. All rights reserved.</p>
+  </footer>
+
+  <!-- Leaflet map library script -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+
+    // ===== LIVE WORLD MAP =====
+    const map = L.map('reach-map', {
+      scrollWheelZoom: false,
+      worldCopyJump: true
+    }).setView([20, 10], 2);
+
+    // Dark-themed map tiles to match the Virtue Careers navy branding
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
+  maxZoom: 8
+}).addTo(map);
+
+    // Custom gold marker icon
+    const goldIcon = L.divIcon({
+      className: 'custom-marker',
+      html: '<span></span>',
+      iconSize: [16, 16]
+    });
+
+    const locations = [
+      { name: "North America", coords: [39.8, -98.5], desc: "Serving executives across the United States and Canada." },
+      { name: "South America", coords: [-14.2, -51.9], desc: "Supporting professionals pursuing global opportunities." },
+      { name: "Europe", coords: [54.5, 15.2], desc: "Executive positioning for leaders across the region." },
+      { name: "Africa", coords: [1.5, 20.0], desc: "Helping talent position for international opportunities." },
+      { name: "Asia", coords: [34.0, 100.6], desc: "Partnering with executives targeting global markets." }
+    ];
+
+    locations.forEach(loc => {
+      L.marker(loc.coords, { icon: goldIcon })
+        .addTo(map)
+        .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
+    });
+
+    // Re-enable scroll zoom only when the user clicks into the map
+    map.on('click', () => map.scrollWheelZoom.enable());
+  </script>
+
+</body>
+</html>

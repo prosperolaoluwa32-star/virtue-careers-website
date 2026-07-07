@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Virtue Careers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Virtue Careers" class="logo-img">
+        <span class="logo-text">Virtue Careers</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="pricing.html">Packages</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="nav-cta active-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <h1>Ready to Elevate Your Career?</h1>
+    <p>Your experience deserves to be seen. Let's make sure it is.</p>
+  </div>
+
+  <!-- CONTACT / FINAL CTA -->
+  <section id="contact">
+    <h2 class="reveal">Get in Touch</h2>
+    <p class="reveal">Have a question, or ready to book a discovery call? Reach out directly below.</p>
+    <a href="mailto:hello@virtuecareers.com" class="btn-primary reveal">Get in Touch</a>
+
+    <div class="contact-details reveal">
+      <p><strong>Email:</strong> <a href="mailto:hello@virtuecareers.com">hello@virtuecareers.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+13292232424">+1 329 223 2424</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prosper-olaoluwa-4b25553a7/" target="_blank">Connect on LinkedIn</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Virtue Careers. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

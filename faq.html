@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Virtue Careers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVIGATION -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Virtue Careers" class="logo-img">
+        <span class="logo-text">Virtue Careers</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="pricing.html">Packages</a></li>
+          <li><a href="faq.html" class="active-link">FAQ</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know before getting started.</p>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2 class="reveal">Frequently Asked Questions</h2>
+
+    <div class="faq-item reveal">
+      <h3>How is this different from using a template or ChatGPT?</h3>
+      <p>Templates and AI tools can format words on a page, but they don't understand how recruiters, boards, and hiring executives actually evaluate candidates. Every document we create is strategically positioned — built around your specific achievements, target role, and industry expectations, not a generic structure.</p>
+    </div>
+
+    <div class="faq-item reveal">
+      <h3>Will my documents be ATS-compliant?</h3>
+      <p>Yes. Every resume and career document is built to pass Applicant Tracking Systems (ATS) and benchmarked against recruitment parsing standards used across major platforms — while still reading naturally and compellingly to a human hiring manager once it reaches them.</p>
+    </div>
+
+    <div class="faq-item reveal">
+      <h3>I'm not actively job searching right now — is this still for me?</h3>
+      <p>Yes. Many clients come to us before they need to move — to be ready when the right opportunity, promotion, or leadership transition appears. Strong positioning is most powerful when it's already in place, not built in a rush after an opportunity has already passed.</p>
+    </div>
+
+    <div class="faq-item reveal">
+      <h3>Do you work with career changers, industry switchers, or people seeking promotions — not just job seekers?</h3>
+      <p>Yes. Whether you're pursuing a promotion within your current company, transitioning into a new industry, or repositioning your experience for a different function, we tailor your narrative to align with where you're going — not just where you've been.</p>
+    </div>
+
+    <div class="faq-item reveal">
+      <h3>Do you only work with clients in the U.S.?</h3>
+      <p>No. While much of our work focuses on the U.S. market, we work with professionals and executives across North America, South America, Europe, Asia, and Africa — helping global talent position themselves for opportunities anywhere in the world.</p>
+    </div>
+
+    <div class="faq-item reveal">
+      <h3>How much does it cost?</h3>
+      <p>Pricing depends on the scope of support you need. Standalone services like a resume refresh or LinkedIn optimization start at an accessible entry price, while comprehensive executive packages are custom-quoted based on your goals. See our <a href="pricing.html">Packages</a> page, or book a discovery call for exact pricing.</p>
+    </div>
+
+    <div class="faq-item reveal">
+      <h3>How long does the process take?</h3>
+      <p>Most projects are completed within 5–10 business days, depending on scope and package. Rush timelines can be accommodated when needed — this can be discussed during your discovery call.</p>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Virtue Careers. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
