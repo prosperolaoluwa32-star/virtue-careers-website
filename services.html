@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services | Virtue Careers</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- HEADER / NAVIGATION -->
-<header id="header">
+  <header id="header">
     <div class="nav-container">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Virtue Careers" class="logo-img">
@@ -35,13 +36,14 @@
       </nav>
     </div>
   </header>
+
   <div class="page-banner">
     <h1>Our Services</h1>
     <p>Strategic positioning built around your experience, your goals, and your target market.</p>
   </div>
 
   <!-- SERVICES -->
-  <section id="services" style="padding-top: 160px;">
+  <section id="services">
     <h2 class="reveal">Services</h2>
     <div class="services-grid">
       <div class="service-card reveal">
@@ -99,7 +101,7 @@
     <p>&copy; 2026 Virtue Careers. All rights reserved.</p>
   </footer>
 
-<script>
+  <script>
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
