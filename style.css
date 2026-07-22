@@ -649,27 +649,109 @@ section h2 {
   color: var(--text-light);
   width: 100%;
   max-width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 #testimonials h2 {
   color: var(--gold);
 }
 
+.success-story {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  border-radius: 14px;
+  padding: 50px;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-story::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(201,162,39,0.18) 0%, rgba(201,162,39,0) 70%);
+}
+
+.success-badge {
+  background-color: var(--gold);
+  color: var(--navy);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 18px;
+}
+
+.success-story h3 {
+  color: var(--gold);
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.success-story p {
+  color: var(--text-light);
+  font-size: 17px;
+  opacity: 0.92;
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+.success-story .success-signature {
+  margin-top: 18px;
+  color: var(--gold);
+  font-style: italic;
+  font-size: 15px;
+  opacity: 0.85;
+}
+
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 30px;
-  margin-top: 20px;
+  align-items: stretch;
 }
 
 blockquote {
-  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  padding: 34px 28px 24px 28px;
+  border-left: none;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  font-size: 16px;
   font-style: italic;
   text-align: left;
-  background: rgba(255,255,255,0.05);
-  padding: 24px;
-  border-left: 3px solid var(--gold);
-  border-radius: 4px;
+}
+
+blockquote::before {
+  content: "\201C";
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  font-family: 'Georgia', serif;
+  font-size: 60px;
+  color: var(--gold);
+  opacity: 0.35;
+  line-height: 1;
+}
+
+blockquote p {
+  font-size: 16px;
 }
 
 blockquote span {
@@ -678,6 +760,12 @@ blockquote span {
   font-size: 16px;
   color: var(--gold);
   font-style: normal;
+}
+
+@media (max-width: 700px) {
+  .success-story {
+    padding: 34px 26px;
+  }
 }
 
 /* ===== WHY VIRTUE CAREERS ===== */
@@ -1082,134 +1170,6 @@ footer {
   z-index: 2;
 }
 
-/* ===== MOBILE RESPONSIVENESS ===== */
-@media (max-width: 768px) {
-  #hero h1 {
-    font-size: 38px;
-  }
-
-  .hero-ribbons {
-    opacity: 0.5;
-  }
-
-  #standard, #stats, #vision {
-    background-attachment: scroll;
-  }
-
-  .why-card-featured {
-    transform: none;
-  }
-}
-/* ===== TESTIMONIALS REDESIGN (editorial style) ===== */
-#testimonials {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.success-story {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
-  border-radius: 14px;
-  padding: 50px;
-  margin-bottom: 60px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.success-story::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(201,162,39,0.18) 0%, rgba(201,162,39,0) 70%);
-}
-
-.success-badge {
-  background-color: var(--gold);
-  color: var(--navy);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 6px 16px;
-  border-radius: 20px;
-  display: inline-block;
-  width: fit-content;
-  margin-bottom: 18px;
-}
-
-.success-story h3 {
-  color: var(--gold);
-  font-size: 24px;
-  margin-bottom: 14px;
-}
-
-.success-story p {
-  color: var(--text-light);
-  font-size: 17px;
-  opacity: 0.92;
-  max-width: 700px;
-  line-height: 1.7;
-}
-
-.success-story .success-signature {
-  margin-top: 18px;
-  color: var(--gold);
-  font-style: italic;
-  font-size: 15px;
-  opacity: 0.85;
-}
-
-/* Masonry-style testimonial layout — breaks the "identical grid card" look */
-.testimonial-grid {
-  column-count: 2;
-  column-gap: 30px;
-  display: block;
-}
-
-blockquote {
-  break-inside: avoid;
-  margin-bottom: 30px;
-  display: inline-block;
-  width: 100%;
-  position: relative;
-  padding: 34px 28px 24px 28px;
-  border-left: none;
-  background: rgba(255,255,255,0.04);
-  border-radius: 6px;
-}
-
-blockquote::before {
-  content: "\201C";
-  position: absolute;
-  top: 2px;
-  left: 20px;
-  font-family: 'Georgia', serif;
-  font-size: 60px;
-  color: var(--gold);
-  opacity: 0.35;
-  line-height: 1;
-}
-
-blockquote p,
-blockquote {
-  font-size: 16px;
-}
-
-@media (max-width: 700px) {
-  .testimonial-grid {
-    column-count: 1;
-  }
-  .success-story {
-    padding: 34px 26px;
-  }
-}
-
 /* ===== WORK PAGE — CASE STUDY FORMAT ===== */
 .case-study {
   margin-bottom: 70px;
@@ -1259,4 +1219,23 @@ blockquote {
   color: var(--gold);
   border-left: 2px solid var(--gold);
   padding-left: 16px;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-ribbons {
+    opacity: 0.5;
+  }
+
+  #standard, #stats, #vision {
+    background-attachment: scroll;
+  }
+
+  .why-card-featured {
+    transform: none;
+  }
 }
