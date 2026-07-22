@@ -48,6 +48,14 @@
   <section id="hero">
     <div class="hero-glow"></div>
 
+    <svg class="grain-overlay" width="100%" height="100%">
+      <filter id="grainFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence>
+        <feColorMatrix type="saturate" values="0"></feColorMatrix>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#grainFilter)"></rect>
+    </svg>
+
     <svg class="hero-ribbons" viewBox="0 0 1600 900" preserveAspectRatio="none">
       <defs>
         <linearGradient id="ribbonGold1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -96,6 +104,7 @@
         <p class="hero-eyebrow reveal">Executive Career Branding</p>
         <h1 class="reveal">Your Career Story.<span class="accent-line">Strategically Told.</span></h1>
         <p class="hero-tagline reveal">Helping executives, directors, and board leaders stand out — on paper, on LinkedIn, and in the room — with positioning built around real achievements, not templates.</p>
+        <div class="hero-divider reveal"></div>
 
         <div class="hero-cta-row reveal">
           <a href="https://calendly.com/info-virtuecareers/30min" target="_blank" class="btn-primary">Book a Discovery Call</a>
