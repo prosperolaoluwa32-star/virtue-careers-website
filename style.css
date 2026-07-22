@@ -561,10 +561,42 @@ section h2 {
 }
 
 .pillar {
-  background: rgba(255,255,255,0.03);
+  position: relative;
+  background: linear-gradient(155deg, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.015) 100%);
+  border: 1px solid rgba(201,162,39,0.22);
   border-left: 3px solid var(--gold);
-  padding: 40px 36px;
-  border-radius: 0 10px 10px 0;
+  border-radius: 4px 12px 12px 4px;
+  padding: 44px 40px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pillar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+  border-color: rgba(201,162,39,0.4);
+}
+
+.pillar-number-bg {
+  position: absolute;
+  top: -22px;
+  right: 4px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 110px;
+  font-weight: 700;
+  color: rgba(201,162,39,0.07);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pillar-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--gold);
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
 }
 
 .pillar-number {
@@ -574,35 +606,44 @@ section h2 {
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--gold);
-  opacity: 0.8;
-  margin-bottom: 14px;
+  opacity: 0.85;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .pillar h3 {
   color: var(--gold);
   font-size: 22px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
 }
 
 .pillar ul {
   list-style: none;
+  position: relative;
+  z-index: 1;
 }
 
 .pillar li {
   position: relative;
-  padding-left: 22px;
-  margin-bottom: 14px;
+  padding-left: 26px;
+  margin-bottom: 15px;
   color: var(--text-light);
-  opacity: 0.9;
+  opacity: 0.92;
   font-size: 15px;
   line-height: 1.5;
 }
 
 .pillar li::before {
-  content: "—";
+  content: "\2192";
   position: absolute;
   left: 0;
+  top: -1px;
   color: var(--gold);
+  font-weight: bold;
+  font-size: 15px;
 }
 
 /* ===== WORK SECTION ===== */
