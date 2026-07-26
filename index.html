@@ -113,19 +113,19 @@
 
         <div class="hero-mini-stats reveal">
           <div>
-            <span class="mini-number">500+</span>
+            <span class="mini-number" data-count-to="500" data-suffix="+">0</span>
             <span class="mini-label">Executives Helped</span>
           </div>
           <div>
-            <span class="mini-number">6+</span>
+            <span class="mini-number" data-count-to="6" data-suffix="+">0</span>
             <span class="mini-label">Years Experience</span>
           </div>
           <div>
-            <span class="mini-number">5</span>
+            <span class="mini-number" data-count-to="5" data-suffix="">0</span>
             <span class="mini-label">Continents Served</span>
           </div>
           <div>
-            <span class="mini-number">92%</span>
+            <span class="mini-number" data-count-to="92" data-suffix="%">0</span>
             <span class="mini-label">Client Satisfaction</span>
           </div>
         </div>
@@ -208,27 +208,23 @@
   </section>
 
   <!-- STATS / IMPACT -->
-  <section id="stats" class="section-bg-video-wrap">
-    <video class="section-bg-video" autoplay muted loop playsinline>
-      <source src="images/stats-bg.mp4" type="video/mp4">
-    </video>
-    <div class="section-bg-overlay"></div>
+  <section id="stats">
     <div class="stats-overlay">
       <div class="stats-grid">
         <div class="stat-item reveal">
-          <span class="stat-number">500+</span>
+          <span class="stat-number" data-count-to="500" data-suffix="+">0</span>
           <span class="stat-label">Executive Candidates Helped</span>
         </div>
         <div class="stat-item reveal">
-          <span class="stat-number">6+</span>
+          <span class="stat-number" data-count-to="6" data-suffix="+">0</span>
           <span class="stat-label">Years of Experience</span>
         </div>
         <div class="stat-item reveal">
-          <span class="stat-number">5</span>
+          <span class="stat-number" data-count-to="5" data-suffix="">0</span>
           <span class="stat-label">Continents Served</span>
         </div>
         <div class="stat-item reveal">
-          <span class="stat-number">92%</span>
+          <span class="stat-number" data-count-to="92" data-suffix="%">0</span>
           <span class="stat-label">Client Satisfaction Rate</span>
         </div>
         <div class="stat-item reveal">
@@ -389,6 +385,36 @@
       navLinks.classList.toggle('open');
       menuToggle.classList.toggle('open');
     });
+
+    // Count-up animation for stat numbers, triggered on scroll into view
+    const countElements = document.querySelectorAll('[data-count-to]');
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.countTo, 10);
+          const suffix = el.dataset.suffix || '';
+          const duration = 1500;
+          const startTime = performance.now();
+
+          function tick(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(eased * target);
+            el.textContent = current + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              el.textContent = target + suffix;
+            }
+          }
+          requestAnimationFrame(tick);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    countElements.forEach(el => countObserver.observe(el));
   </script>
 
 </body>
