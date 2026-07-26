@@ -876,17 +876,23 @@ section h2 {
   margin-right: auto;
 }
 
+.about-header h2 {
+  text-align: left;
+  font-size: 46px;
+  color: var(--navy);
+}
+
 .about-content {
   display: grid;
-  grid-template-columns: 380px 1fr;
+  grid-template-columns: 340px 1fr;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
   margin-top: 20px;
 }
 
 .about-photo {
   width: 100%;
-  max-width: 380px;
+  max-width: 340px;
   height: auto;
   object-fit: cover;
   border-radius: 12px;
@@ -898,24 +904,58 @@ section h2 {
   text-align: center;
 }
 
-.photo-caption {
-  margin-top: 16px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 14px;
-  color: var(--navy);
-  line-height: 1.5;
+.about-text-block {
+  text-align: left;
 }
 
-.photo-caption strong {
-  font-size: 15px;
+.about-name {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
   color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.about-role {
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-bottom: 18px;
+}
+
+.about-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.about-badge {
+  background: var(--navy);
+  color: var(--gold);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 7px 16px;
+  border-radius: 20px;
 }
 
 @media (max-width: 700px) {
+  .about-header h2 {
+    text-align: center;
+  }
   .about-content {
     grid-template-columns: 1fr;
     text-align: center;
     justify-items: center;
+  }
+  .about-text-block {
+    text-align: center;
+  }
+  .about-badges {
+    justify-content: center;
   }
 }
 
@@ -1217,11 +1257,32 @@ section h2 {
   opacity: 0.85;
 }
 
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+.testimonial-track {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.testimonial-slide {
+  display: flex;
   gap: 30px;
-  align-items: stretch;
+  width: max-content;
+  animation: slideTestimonials 40s linear infinite;
+}
+
+.testimonial-track:hover .testimonial-slide {
+  animation-play-state: paused;
+}
+
+@keyframes slideTestimonials {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.testimonial-slide blockquote {
+  width: 420px;
+  flex-shrink: 0;
 }
 
 blockquote {
@@ -1874,7 +1935,109 @@ footer {
   padding-left: 16px;
 }
 
-/* ===== FOOTER REDESIGN ===== */
+/* ===== PRICING BANDS (20-tier tab filter) ===== */
+.pricing-band {
+  display: none;
+}
+
+.pricing-band.active {
+  display: grid;
+}
+
+/* ===== WORK PAGE — SAMPLE DOCUMENT GALLERY ===== */
+.samples-intro {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px auto;
+  color: var(--navy);
+  opacity: 0.8;
+  font-size: 16px;
+}
+
+.samples-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.sample-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sample-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.sample-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 3px solid var(--gold);
+}
+
+.sample-card-label {
+  padding: 16px 18px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* ===== CONTACT PAGE — PHOTO BANNER ===== */
+.contact-photo-banner {
+  background-image: linear-gradient(rgba(5,13,26,0.78), rgba(5,13,26,0.88)), url('images/contact-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.contact-alt-strip {
+  width: 100%;
+  height: 220px;
+  background-image: linear-gradient(rgba(11,31,58,0.55), rgba(11,31,58,0.75)), url('images/contact-alt.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ===== VISION VIDEO BACKGROUND ===== */
+#vision {
+  position: relative;
+  overflow: hidden;
+  background-image: none;
+  animation: none;
+}
+
+.vision-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+#vision::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(5,13,26,0.6), rgba(5,13,26,0.8));
+  z-index: 1;
+}
+
+#vision .vision-overlay {
+  position: relative;
+  z-index: 2;
+}
 footer {
   background-color: var(--navy-deep);
   color: var(--text-light);

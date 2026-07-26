@@ -53,7 +53,14 @@
 
   <!-- ABOUT / BIO -->
   <section id="about">
-    <h2 class="reveal">About Virtue Careers</h2>
+    <div class="standard-grid" style="align-items: start;">
+      <div class="standard-content" style="grid-column: 1 / -1; margin-bottom: 10px;">
+        <p class="standard-eyebrow reveal" style="color: var(--gold);">Our Story</p>
+        <h2 class="reveal" style="text-align: left; color: var(--navy);">Why Virtue Careers Exists</h2>
+        <div class="hero-divider reveal" style="background: var(--gold);"></div>
+      </div>
+    </div>
+
     <div class="about-content reveal">
       <div class="about-photo-wrap">
         <img src="images/headshot.png" alt="Founder of Virtue Careers" class="about-photo">
@@ -143,13 +150,11 @@
       worldCopyJump: true
     }).setView([20, 10], 2);
 
-    // Dark-themed map tiles to match the Virtue Careers navy branding
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
       maxZoom: 8
     }).addTo(map);
 
-    // Custom gold marker icon
     const goldIcon = L.divIcon({
       className: 'custom-marker',
       html: '<span></span>',
@@ -170,7 +175,6 @@
         .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
     });
 
-    // Re-enable scroll zoom only when the user clicks into the map
     map.on('click', () => map.scrollWheelZoom.enable());
   </script>
 
