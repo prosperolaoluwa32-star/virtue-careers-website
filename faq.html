@@ -52,37 +52,44 @@
   <section id="faq">
     <h2 class="reveal">Frequently Asked Questions</h2>
 
-    <div class="faq-item reveal">
+    <div class="faq-tabs reveal">
+      <button class="faq-tab active" data-category="all">All</button>
+      <button class="faq-tab" data-category="general">General</button>
+      <button class="faq-tab" data-category="eligibility">Eligibility</button>
+      <button class="faq-tab" data-category="pricing">Pricing & Timeline</button>
+    </div>
+
+    <div class="faq-item reveal" data-category="general">
       <h3>How is this different from using a template or ChatGPT?</h3>
       <p>Templates and AI tools can format words on a page, but they don't understand how recruiters, boards, and hiring executives actually evaluate candidates. Every document we create is strategically positioned — built around your specific achievements, target role, and industry expectations, not a generic structure.</p>
     </div>
 
-    <div class="faq-item reveal">
+    <div class="faq-item reveal" data-category="general">
       <h3>Will my documents be ATS-compliant?</h3>
       <p>Yes. Every resume and career document is built to pass Applicant Tracking Systems (ATS) and benchmarked against recruitment parsing standards used across major platforms — while still reading naturally and compellingly to a human hiring manager once it reaches them.</p>
     </div>
 
-    <div class="faq-item reveal">
+    <div class="faq-item reveal" data-category="eligibility">
       <h3>I'm not actively job searching right now — is this still for me?</h3>
       <p>Yes. Many clients come to us before they need to move — to be ready when the right opportunity, promotion, or leadership transition appears. Strong positioning is most powerful when it's already in place, not built in a rush after an opportunity has already passed.</p>
     </div>
 
-    <div class="faq-item reveal">
+    <div class="faq-item reveal" data-category="eligibility">
       <h3>Do you work with career changers, industry switchers, or people seeking promotions — not just job seekers?</h3>
       <p>Yes. Whether you're pursuing a promotion within your current company, transitioning into a new industry, or repositioning your experience for a different function, we tailor your narrative to align with where you're going — not just where you've been.</p>
     </div>
 
-    <div class="faq-item reveal">
+    <div class="faq-item reveal" data-category="eligibility">
       <h3>Do you only work with clients in the U.S.?</h3>
       <p>No. While much of our work focuses on the U.S. market, we work with professionals and executives across North America, South America, Europe, Asia, and Africa — helping global talent position themselves for opportunities anywhere in the world.</p>
     </div>
 
-    <div class="faq-item reveal">
+    <div class="faq-item reveal" data-category="pricing">
       <h3>How much does it cost?</h3>
       <p>Pricing depends on the scope of support you need. Standalone services like a resume refresh or LinkedIn optimization start at an accessible entry price, while comprehensive executive packages are custom-quoted based on your goals. See our <a href="pricing.html">Packages</a> page, or book a discovery call for exact pricing.</p>
     </div>
 
-    <div class="faq-item reveal">
+    <div class="faq-item reveal" data-category="pricing">
       <h3>How long does the process take?</h3>
       <p>Most projects are completed within 5–10 business days, depending on scope and package. Rush timelines can be accommodated when needed — this can be discussed during your discovery call.</p>
     </div>
@@ -133,6 +140,26 @@
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       menuToggle.classList.toggle('open');
+    });
+
+    // FAQ category filtering
+    const faqTabs = document.querySelectorAll('.faq-tab');
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        faqTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const category = tab.dataset.category;
+
+        faqItems.forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
     });
   </script>
 

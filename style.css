@@ -701,19 +701,29 @@ section h2 {
 
 /* ===== MEET THE STANDARD (boardroom background) ===== */
 #standard {
-  background-image: linear-gradient(rgba(5,13,26,0.75), rgba(5,13,26,0.85)), url('images/boardroom.jpg');
+  background-image: linear-gradient(rgba(5,13,26,0.8), rgba(5,13,26,0.88)), url('images/boardroom.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   width: 100%;
   max-width: 100%;
-  text-align: center;
-  padding: 130px 40px;
+  padding: 140px 40px;
 }
 
-.standard-overlay {
-  max-width: 750px;
+.standard-grid {
+  max-width: 1100px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+  text-align: left;
+}
+
+.standard-content h2 {
+  text-align: left;
+  font-size: 46px;
+  color: var(--text-light);
 }
 
 .standard-eyebrow {
@@ -726,14 +736,70 @@ section h2 {
   margin-bottom: 14px;
 }
 
-#standard h2 {
-  color: var(--text-light);
-}
-
 .standard-text {
   color: var(--text-light);
   font-size: 18px;
   opacity: 0.9;
+  max-width: 480px;
+}
+
+.standard-card {
+  background: linear-gradient(155deg, #17294c 0%, #0c1a34 100%);
+  border: 1px solid rgba(201,162,39,0.3);
+  border-radius: 12px;
+  padding: 40px 36px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+}
+
+.standard-card-label {
+  color: var(--gold);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.standard-card-list {
+  list-style: none;
+}
+
+.standard-card-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 16px;
+  color: var(--text-light);
+  font-size: 16px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.standard-card-list li:last-child {
+  margin-bottom: 0;
+}
+
+.standard-card-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+}
+
+@media (max-width: 800px) {
+  .standard-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .standard-content h2 {
+    text-align: center;
+  }
+  .standard-text {
+    margin: 0 auto;
+  }
 }
 
 /* ===== STATS / IMPACT (mountain background) ===== */
@@ -750,16 +816,40 @@ section h2 {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 40px;
+  gap: 0;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
 
+.stat-item {
+  padding: 20px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-item:hover {
+  transform: translateY(-6px);
+}
+
+@media (max-width: 700px) {
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+}
+
 .stat-number {
   display: block;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 42px;
+  font-size: 46px;
   font-weight: 700;
   color: var(--gold);
   margin-bottom: 8px;
@@ -1181,52 +1271,79 @@ blockquote span {
 
 /* ===== WHY VIRTUE CAREERS ===== */
 #why-us {
-  background-color: var(--navy-tint);
+  background-color: var(--navy-deep);
   width: 100%;
   max-width: 100%;
+}
+
+#why-us h2 {
+  color: var(--gold);
 }
 
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 24px;
+  gap: 30px;
   margin-top: 40px;
+  align-items: center;
 }
 
 .why-card {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: var(--card-shadow);
-  border-top: 3px solid #ccc;
-  opacity: 0.75;
+  background: linear-gradient(155deg, rgba(255,255,255,0.045), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 10px;
+  padding: 38px 32px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.18);
 }
 
 .why-card h3 {
-  color: var(--navy);
+  color: var(--text-light);
+  opacity: 0.75;
   margin-bottom: 12px;
   font-size: 18px;
 }
 
 .why-card p {
   font-size: 15px;
-  color: #555;
+  color: var(--text-light);
+  opacity: 0.55;
 }
 
 .why-card-featured {
-  border-top: 3px solid var(--gold);
-  opacity: 1;
-  box-shadow: var(--card-shadow-hover);
-  transform: scale(1.03);
+  background: linear-gradient(155deg, rgba(201,162,39,0.1), rgba(255,255,255,0.02));
+  border: 1px solid rgba(201,162,39,0.5);
+  transform: scale(1.06);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+}
+
+.why-card-featured:hover {
+  transform: scale(1.06) translateY(-4px);
+  border-color: var(--gold);
 }
 
 .why-card-featured h3 {
   color: var(--gold);
+  opacity: 1;
 }
 
 .why-card-featured p {
-  color: var(--text-dark);
+  color: var(--text-light);
+  opacity: 0.95;
   font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .why-card-featured {
+    transform: none;
+  }
+  .why-card-featured:hover {
+    transform: translateY(-4px);
+  }
 }
 
 /* ===== VISION SECTION (starfield background) ===== */
@@ -1249,15 +1366,30 @@ blockquote span {
 .vision-overlay {
   max-width: 750px;
   margin: 0 auto;
+  position: relative;
+}
+
+.vision-overlay::before {
+  content: "\201C";
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Georgia', serif;
+  font-size: 140px;
+  color: var(--gold);
+  opacity: 0.18;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .philosophy-quote {
-  font-size: 34px;
+  font-size: 40px;
   font-style: italic;
   color: var(--gold);
   max-width: 750px;
   margin: 0 auto;
-  line-height: 1.4;
+  line-height: 1.35;
   position: relative;
 }
 
@@ -1285,6 +1417,15 @@ blockquote span {
   max-width: 100%;
   text-align: center;
   padding: 90px 40px;
+}
+
+.cta-panel {
+  max-width: 780px;
+  margin: 0 auto;
+  background: linear-gradient(155deg, rgba(201,162,39,0.07), rgba(255,255,255,0.02));
+  border: 1px solid rgba(201,162,39,0.3);
+  border-radius: 14px;
+  padding: 60px 50px;
 }
 
 #cta-band h2 {
@@ -1467,7 +1608,108 @@ blockquote span {
   color: var(--text-light);
 }
 
-/* ===== FAQ SECTION ===== */
+/* ===== NEWSLETTER PANEL ===== */
+#newsletter {
+  background-color: var(--navy-deep);
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: 100px 40px;
+}
+
+.newsletter-panel {
+  max-width: 700px;
+  margin: 0 auto;
+  background: linear-gradient(155deg, rgba(201,162,39,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(201,162,39,0.3);
+  border-radius: 14px;
+  padding: 60px 50px;
+}
+
+#newsletter h2 {
+  color: var(--gold);
+}
+
+.newsletter-text {
+  color: var(--text-light);
+  opacity: 0.85;
+  margin-bottom: 32px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 14px 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--text-light);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(248,247,244,0.5);
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.newsletter-form button {
+  padding: 14px 28px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.newsletter-note {
+  color: var(--text-light);
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+/* ===== FAQ CATEGORY TABS ===== */
+.faq-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.faq-tab {
+  padding: 10px 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(11,31,58,0.18);
+  background: white;
+  color: var(--navy);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.faq-tab:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.faq-tab.active {
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+}
 #faq {
   background-color: var(--navy-tint);
   width: 100%;
