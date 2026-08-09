@@ -1978,6 +1978,59 @@ blockquote span {
   margin-top: 8px;
 }
 
+/* ===== PORTFOLIOS PAGE ===== */
+#portfolios-section {
+  background-color: var(--navy);
+  width: 100%;
+  max-width: 100%;
+  padding-top: 100px;
+  padding-bottom: 110px;
+}
+
+#portfolios-section h2 {
+  color: var(--gold);
+}
+
+.portfolios-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 70px auto;
+  color: var(--text-light);
+  opacity: 0.85;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.portfolio-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 60px 40px;
+  align-items: start;
+}
+
+.portfolio-showcase-grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-example-label {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--text-light);
+  opacity: 0.6;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Clear visual break before the Website Design Services section */
+#portfolios-section + #services {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 110px;
+}
+
 /* ===== FOOTER ===== */
 footer {
   background-color: var(--navy-deep);
