@@ -1489,6 +1489,24 @@ blockquote span {
   padding: 60px 50px;
 }
 
+.cta-panel-with-image {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.cta-panel-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto 30px auto;
+  display: block;
+}
+
+.cta-panel-with-image h2 {
+  text-align: center;
+}
+
 #cta-band h2 {
   color: var(--gold);
 }
