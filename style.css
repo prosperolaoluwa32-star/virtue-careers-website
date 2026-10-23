@@ -572,3 +572,6 @@ html.nav-in #curtain{transform:none;transition:none}
 @media (max-width:1100px){.hero-grid{grid-template-columns:1fr}}
 html,body{overflow-x:clip}
 main>section,main>div{overflow-x:clip}
+.portrait::before{display:none}
+.portrait .frame{box-shadow:16px 16px 0 -1px var(--ivory),16px 16px 0 0 var(--gold)}
+.portrait figcaption{margin-top:40px}
