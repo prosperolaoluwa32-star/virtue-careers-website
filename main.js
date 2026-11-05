@@ -20,7 +20,7 @@
   if(loader && !seen && !reduced && !navIn){
     safe(function(){sessionStorage.setItem('vc_seen','1')});
     body.classList.add('loading');
-    var num=$('#loader .count'), fill=$('#loader .bar i'), t0=performance.now(), dur=2500, done=false;
+    var num=$('#loader .count'), fill=$('#loader .bar i'), t0=performance.now(), dur=1500, done=false;
     var skip=function(){ if(done) return; done=true; finishLoader(); };
     loader.addEventListener('click',skip);
     (function tick(now){
@@ -28,7 +28,7 @@
       var p=Math.min((now-t0)/dur,1), e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
       if(num) num.textContent=String(Math.round(e*100)).padStart(3,'0');
       if(fill) fill.style.transform='scaleX('+e+')';
-      if(p<1) requestAnimationFrame(tick); else { setTimeout(skip,260); }
+      if(p<1) requestAnimationFrame(tick); else { setTimeout(skip,150); }
     })(t0);
     setTimeout(skip,6500);
   } else {
