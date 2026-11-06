@@ -14,8 +14,8 @@
   --on-dark:#FBF7F0; --on-dark-muted:rgba(251,247,240,.78);
   --wa:#178A47; --wa-dark:#116B37;
   /* type */
-  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-  --sans:'Manrope','Helvetica Neue',Arial,sans-serif;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'Public Sans','Helvetica Neue',Arial,sans-serif;
   /* one system for shape, shadow, motion and space */
   --r:12px; --r-sm:8px;
   --sh1:0 1px 2px rgba(18,58,51,.06),0 10px 28px rgba(18,58,51,.07);
@@ -41,12 +41,12 @@ button{font:inherit}
 .center{text-align:center}
 
 /* ---------- Type ---------- */
-h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacing:-.005em;color:var(--pine)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.012em;font-variant-numeric:lining-nums;color:var(--pine)}
 .dark h1,.dark h2,.dark h3,.navy h1,.navy h2,.navy h3,.cta-box h2{color:var(--cream)}
-h1{font-size:clamp(2.4rem,9vw,4.4rem)}
-h2{font-size:clamp(1.9rem,6.4vw,3rem)}
+h1{font-size:clamp(2.3rem,8.6vw,4.1rem)}
+h2{font-size:clamp(1.85rem,6.2vw,2.8rem)}
 h3{font-size:1.5rem}
-em{font-style:italic;font-weight:600;color:var(--accent-dark)}
+em{font-style:italic;font-weight:500;color:var(--accent-dark)}
 .dark em,.navy em,.cta-box em{color:var(--glow)}
 .eyebrow{display:block;font:800 .74rem/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--accent-dark)}
 .dark .eyebrow,.navy .eyebrow,.cta-box .eyebrow{color:var(--glow)}
@@ -113,7 +113,7 @@ html.nav-in #curtain{transform:none;transition:none}
 .brand{display:flex;align-items:center;gap:11px;color:var(--pine)}
 .brand svg{width:34px;height:34px;flex:none}
 .brand .m1{fill:var(--accent)}.brand .m2{fill:var(--glow)}
-.brand b{display:block;white-space:nowrap;font:700 1.18rem/1 var(--serif);letter-spacing:.08em;text-transform:uppercase}
+.brand b{display:block;white-space:nowrap;font:600 1.12rem/1 var(--serif);letter-spacing:.09em;text-transform:uppercase}
 .brand small{display:block;font:700 .54rem/1 var(--sans);letter-spacing:.28em;color:var(--accent-dark);margin-top:5px;text-transform:uppercase}
 .menu-toggle{width:48px;height:48px;position:relative;background:none;border:1px solid var(--line-strong);border-radius:var(--r-sm);cursor:pointer;z-index:1200;flex:none}
 .menu-toggle span{position:absolute;left:13px;right:13px;height:2px;background:var(--pine);transition:transform .35s var(--ease),opacity .2s,top .35s var(--ease),background .3s}
@@ -178,7 +178,7 @@ html.nav-in #curtain{transform:none;transition:none}
 .badge{display:inline-block;padding:8px 14px;border:1px solid var(--accent-dark);color:var(--accent-dark);font:800 .68rem/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;border-radius:40px}
 .quotes{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--pad) 14px;margin:30px calc(var(--pad) * -1) 0;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
 .quote{flex:0 0 84%;scroll-snap-align:center;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--sh1)}
-.quote p{font:600 1.18rem/1.45 var(--serif);color:var(--ink);margin-bottom:14px}
+.quote p{font:500 1.2rem/1.5 var(--serif);color:var(--ink);margin-bottom:14px}
 .quote cite{display:block;font:700 .72rem/1.5 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-style:normal}
 
 /* ---------- Live sites ---------- */
